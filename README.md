@@ -32,7 +32,7 @@ Grab the Python script and modify your Telegram data in it + what your temperatu
 
 ## Automating the notifications
   
-When the script notifies you correctly of the negative el. prices, the next step is to automate it. 
+When the script notifies you correctly of the temperature rise, the next step is to automate it. 
 
 Run the following command to open your crontab.
 
