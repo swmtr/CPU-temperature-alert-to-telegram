@@ -17,12 +17,14 @@ We will use the lm-sensors package, which is a common tool for monitoring hardwa
 sudo apt-get install lm-sensors
 ```
 
-2. Telegram bot (https://core.telegram.org/bots/tutorial) and the Python Telegram library
+2. Python Telegram library
 
 To get the library, run this command:
 ```
 pip install python-telegram-bot
 ```
+
+3. Telegram bot (https://core.telegram.org/bots/tutorial) - this is where you will get bot token and chat id
 
 
 ## The script
