@@ -1,3 +1,5 @@
+# This script will check the current temperature of the CPU and will notify you on Telegram if it reaches over certain threshold
+
 import subprocess
 import telegram
 import asyncio
