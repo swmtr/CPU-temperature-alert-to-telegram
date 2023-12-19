@@ -1,6 +1,6 @@
 # Telegram alert when your CPU reaches a certain threshold
 
-When you run your own Linux based machine at home and provide certain services, it might not be a bad idea to monitor it's health. One part being, the CPU temperature.
+When you run your own Linux based machine (ex: Ubuntu Mini PC or Raspberry Pi) at home and provide certain services, it might not be a bad idea to monitor it's health. One part being, the CPU temperature.
 
 This is a simple script which will send an alert to your Telegram when the CPU rises over a certain temperature (in this example: 50 degrees Celsius)
 
