@@ -9,7 +9,7 @@ Setup an alert sent to Telegram when your Ubuntu CPU's temperature rises over a 
 
 ## Pre-requsites
 
-1. lm-sensors package installed
+1. lm-sensors package installed (if you have Raspberry Pi, you can skip this)
 
 We will use the lm-sensors package, which is a common tool for monitoring hardware sensor readings, including CPU temperature. To install it, run this command:
 
@@ -19,8 +19,17 @@ sudo apt-get install lm-sensors
 
 2. Python Telegram library
 
+For Raspberry Pi setup, see the end of this section.
+
 To get the library, run this command:
 ```
+pip install python-telegram-bot
+```
+
+For Raspberry Pi, if you try to install via pip, you will get an error. You will need to create a virtual environment first and then install the bot. Run the following commands:
+```
+python3 -m venv venv
+source venv/bin/activate
 pip install python-telegram-bot
 ```
 
@@ -30,6 +39,12 @@ pip install python-telegram-bot
 ## The script
 
 Grab the Python script and modify your Telegram data in it + what your temperature threshold should be.
+
+For Raspberry Pi:
+- each time you want to run the .py script, you will need to activate the virtual environment
+```
+source venv/bin/activate
+```
 
 
 ## Automating the notifications
@@ -46,6 +61,12 @@ Add the following into it.
 
 ```
 30 * * * * /usr/bin/python3 /ABSOLUTE PATH TO YOUR PYTHON FILE/cpu-temp-alert.py >> /ABSOLUTE PATH TO YOUR CRONLOG FILE 2>&1
+```
+
+For Raspberry Pi:
+
+```
+30 * * * *  /home/<USERNAME>/venv/bin/python3 /ABSOLUTE PATH TO YOUR PYTHON FILE/check-pi-cpu-temp.py >> /ABSOLUTE PATH TO YOUR CRONLOG FILE  2>&1
 ```
 
 Don't forget to replace the path to your python file and to the location where you want the log. 
